@@ -1,0 +1,93 @@
+.row{
+display: inline-flex;  
+justify-content: space-evenly;  
+text-align: center;
+width:100%;
+height:auto;
+margin:20px;
+}
+
+.prod{
+  width: 250px;
+  height: 70vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
+.bg-image{
+  background-image: url('image1.png');
+  height:50vh;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img2{
+  background-image: url('image2.png');
+}
+
+.img3{
+  background-image: url('image3.png');
+}
+
+.img4{
+  background-image: url('image4.png');
+}
+  
+.tag{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+  margin:25px 8px;
+  color:white;
+  font-weight: bold;
+}
+
+.green{
+  width: 20px;
+  height:20px;
+  padding:12px 12px;
+  border-radius: 50px 50px;
+  background:green;
+}
+
+.red{
+  width: 20px;
+  height:20px;
+  padding:12px 12px;
+  border-radius: 50px 50px;
+  background:rgb(231, 41, 3);
+}
+
+.text{
+  height: 40vh;
+  text-align: center;
+  font-size: 18px;
+}
+ul{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  list-style-type: none;
+  margin:15px;
+  padding: 0px;
+}
+.saleprice {
+  color: rgb(20, 134, 32);
+  font-size: 22px;
+}
+.price{
+  font-size:18px;
+  color: grey;
+  text-decoration: line-through;
+}
+
+button {
+  border: none;
+  outline: 0;
+  padding: 15px 30px;
+  color: rgb(76, 72, 72);
+  background-color: rgb(250, 237, 237)
+  text-align: center;
+  font-size: 16px;
+}

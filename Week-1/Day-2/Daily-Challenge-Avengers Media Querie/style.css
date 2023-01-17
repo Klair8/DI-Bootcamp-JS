@@ -1,0 +1,178 @@
+body, html{
+	margin:0px; 
+	padding:0px;
+	box-sizing: border-box;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+	width:auto;
+	height: 6vh;
+	background-color:black;
+}
+
+ul{
+	list-style-type: none;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+li{
+	float:right;
+}
+
+li a{
+	display: block;
+	margin: 0 auto;
+	padding-right: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-decoration: none;
+	color: #eae6e9;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+
+li a:hover{
+	color:  #f32170;
+  }
+
+
+.bg-image{
+background-image: url('Captain Marvel Background.jpeg');
+height: 88vh;
+background-repeat: no-repeat;
+background-position: left top;
+background-size: cover;
+}
+
+.content{
+		position: absolute;  
+		top: 100px;
+		left: 50px;		
+}
+
+h1{
+	font-family:Masked Hero Demo;
+	background: linear-gradient(
+		to right, #905f89,#f32170, #fc6500,
+		 #cf23cf);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 40px;
+	letter-spacing: 3px;	
+}
+
+.text {
+	width: 380px;
+    height: 50px;
+	margin-top: 60px;
+	font-size: 18px ;
+	color:white;
+	text-align: justify;
+}
+
+.text p{
+	background-color: rgba(56, 56, 56, 0.5);
+    color: #fff;
+	padding: 10px;
+	border-radius: 6px;
+}
+
+footer{
+		width:auto;
+		height: 10vh;
+		background-color: black;
+	}
+
+
+.footer{
+	position: relative;
+	left: 0;
+	bottom: 0;
+	margin: 0 auto;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: white ;
+	text-align: center;	
+	font-size: 17px;
+}
+
+.footer a{
+	color: #f32170;
+
+}
+
+/* Media Exercice 
+Font size of the title:
+on Medium devices (landscape tablets, 768px and up) : 25px
+on Small devices (portrait tablets and large phones, 600px and up): 35px*/
+
+@media screen and (min-width: 768px) {
+	h1{
+		font-size: 25px;
+		letter-spacing: 2px;	
+	}
+   }
+
+   @media screen and (min-width: 600px) {
+	h1{
+		font-size: 35px;
+		letter-spacing: 2px;	
+	}
+   }
+
+
+/* Navbar background color:
+Small devices : yellow and font color black
+Medium devices : lightgreen and font color black.
+Large devices (laptops/desktops, 992px and up) : red and font color white.
+Extra large devices (large laptops and desktops, 1200px and up) : black and font color white. */
+
+   @media screen and (min-width: 600px) and (max-width: 767px)  {
+	header{
+		background-color:rgb(215, 205, 16);
+	}
+   }
+
+   @media screen and (min-width: 768px) and (max-width: 991px){
+	header{
+		background-color:rgb(77, 189, 90);
+	}
+   }
+
+   @media screen and (min-width: 992px) and (max-width: 1199px){
+	header{
+		background-color:rgb(242, 90, 8);
+	}
+   }
+
+   @media screen and (min-width: 1200px) {
+	header{
+		background-color:black;
+	}
+   }
+
+/* Position of the text
+Large devices: the title is next to the paragraph.
+Small devices: the title is above the paragraph. */
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+	
+	h1 {
+		float: right;
+		font-size: 35px;
+		letter-spacing: 2px;
+	}
+.text{
+	display: flex;
+    align-items: center;
+	margin-top: 120px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px)  {
+	header{
+		background-color:rgb(215, 205, 16);
+	}
+   }

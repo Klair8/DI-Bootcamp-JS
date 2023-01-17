@@ -1,0 +1,52 @@
+body{
+background-color: bisque;
+}
+
+nav{
+background-color:black;
+width: auto;
+height:8vh;
+}
+
+i{
+color: white;  
+margin:20px;
+ }
+
+form{
+margin-top: 60px;
+text-align: center;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ } 
+
+h1{
+font-size: 35px;
+ }
+
+label{
+font-size: 20px;
+}
+
+input{
+font-size: 20px; 
+}
+
+input[type="submit" i] {
+background-color: black;
+color: white;
+   padding: 2px 12px;
+}
+
+input[type="submit" i]:hover {
+background-color: rgb(223, 16, 151);
+}
+
+footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: rgb(101, 99, 99);
+color: white;
+text-align: center;
+}    

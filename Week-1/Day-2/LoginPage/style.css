@@ -1,0 +1,117 @@
+body{
+    background-color:#eeeeee;
+    width: auto;
+    height:100vh;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}
+
+.left{
+float: left;
+background-color: #fafafa; 
+width: 50%; 
+height: 100vh;
+}
+
+form{
+    text-align: center;
+    margin-top: 100px;
+}
+
+input{
+    font-size: larger;
+    margin:10px;
+    padding:10px;
+    background-color:#eeeeee;
+    color: #939393;
+    border: none;
+}
+
+input[type="submit" i] {
+    background-color:#9c27b0;
+    width:400px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: #939393;
+    padding-left:130px;
+}
+
+h1{
+    font-size: 55px;
+    font-weight: 600;
+}
+h5{
+    border-bottom: 1px solid #000;
+    line-height:0.1em;
+    margin: 10px 0 20px;
+}
+
+h5 span{
+    background:#fff;
+    padding:0 10px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #939393;
+}
+
+i{
+    color: #939393;
+}
+
+p{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.right{
+    float:right;
+    background: linear-gradient(
+        to right, #3e224c, #6a257b,
+        #842697, #9727aa);
+    width: 50%; 
+    height: 100vh;
+    text-align: center;
+    color:white;
+    font-weight: 400;
+}
+
+.fright{
+    margin: 150px;
+}
+
+.fa-user-plus:before {
+    color:white;
+    
+}
+
+h2{
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.iconfield {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color:#9c27b0;
+    width:150px;
+    border-radius: 50px 50px;
+  }
+  
+.iconfield .fa-circle-arrow-right:before {
+    color:white;
+    font-weight: bold;
+  }
+
+   .iconfield-input {
+    color: white;
+    font-size: 15px ;
+  } 
+
+  input[type="button" i] { 
+    background-color:#9c27b0;
+    color: white;
+}  
