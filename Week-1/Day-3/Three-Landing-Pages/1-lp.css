@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('map.jpeg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.left .middle .right{
+    line-height: 2px;
+}
+
+h1{
+    text-align: center;
+}
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  justify-items: center; 
+    align-items: center;
+    text-align: center;
+    padding:3px;
+}
+
+h3{
+    color: blue;
+    font-size: 36px;
+    
+}
+
+.box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    position: relative;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+.up{
+    background-color: white;
+    padding-bottom:20px;
+}
+.bk{
+    padding-top:10px;
+    width: 20vw;
+    height: 14vh;
+}
+
+.two{
+    align-self: flex-end;
+}
+
+.upone{
+    background-color: white;
+    padding-bottom:22px; 
+}
+.one{
+    align-self: self-start;
+}
+
+
+.blue{
+    background-color: rgb(149, 180, 207);
+    height:fit-content;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.green{
+    background-color: rgb(197, 241, 216);
+}
+
+img{
+    position: absolute;
+    top: 40%;
+    border-radius: 50% 50%;  
+
+}
