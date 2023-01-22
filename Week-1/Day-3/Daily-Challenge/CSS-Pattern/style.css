@@ -10,20 +10,6 @@ section{
     align-content: center;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    width:auto;
-}
-
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    width:auto;
-}
-
 .horizon{
     display: flex;
     flex-direction: row;
@@ -33,33 +19,15 @@ section{
 }
 
 .img{
-    border-color: 1px solid black;
     background-color:yellow;
     padding: 50px;
     width:100xp;
     height: 100xp;
-}
-
-.left .img{
     border: 2px solid black;
-    display:flex;
-    flex-direction: column;
     margin:30px;
 }
 
-.right .img{
-    border: 2px solid black;
-    display:flex;
-    flex-direction: column;
-   margin:30px;
-}
 
-.horizon .img{
-    border: 2px solid black;
-    display:flex;
-    flex-direction: column;
-    margin:30px;
-}
 
 
 

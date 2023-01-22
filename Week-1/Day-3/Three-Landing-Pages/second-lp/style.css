@@ -1,0 +1,73 @@
+body{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    color:white;
+}
+
+nav{
+    display:flex;
+    justify-content: space-evenly; 
+    align-items: baseline;
+    background-color:#0d6a9c;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 13px;
+}
+
+input[type="button" i] {
+    background-color: #9273c6;
+    border-style: none;
+    border-radius: 10%;
+    color:white;
+    padding:10px 15px;
+   
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 30px;
+    background-image:url(152934-digital_art-blue-daytime-tower_block-city-x750.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    width: 100%;
+}
+
+select {
+    width: 100%;
+  }
+
+input, select {
+    padding: 5px 0px;
+  }
+
+ul{
+    line-height:15px;
+    list-style-type: square;
+}
+   
+h2, p{
+    text-align: center;
+}
+h2{
+    font-size: 18px;
+}
+
+
+input[type="submit" i] {
+    background-color: #9273c6;
+    text-align: center;
+    border-style: none;
+    border-radius: 10%;
+    color:white;
+    padding:10px 30px;
+}
+   
