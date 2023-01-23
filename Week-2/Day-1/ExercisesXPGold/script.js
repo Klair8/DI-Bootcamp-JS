@@ -37,6 +37,7 @@ console.log(allString);
 // Prompt the user for the second number.
 // Store the second number in a variable called num2.
 // Create an Alert where the value is the SUM of num1 and num2.
+
 // BONUS: Make a program that can subtract, multiply, and also divide!
 
  const userAnswer = Number(prompt("Give your first number "));
@@ -47,9 +48,10 @@ console.log(allString);
  const num2 = userAnswer2;
  console.log(num2);
 
- const sameNumber = num1=num2;
+const sum = num1 + num2;
+const multiple = num1 * num2;
 
- const sameNumber = Number (alert("its the same number !!"));
+ alert(`the total of your numbers are ${sum}!`);
+ alert(`the multiplication of your numbers are ${multiple}!`);
 
-console.log(value);
 
