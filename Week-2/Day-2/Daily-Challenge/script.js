@@ -17,52 +17,19 @@
 
 
 
-let sentence = ["not","bad"];
+let sentence = "The movie is not that bad, I like it";
 console.log(sentence)
 
-let wordNot= sentence[0];
+let wordNot = sentence.toLowerCase().indexOf("not");
 console.log(wordNot)
 
-let wordBad= sentence[1];
+let wordBad = sentence.toLowerCase().indexOf("bad");
 console.log(wordBad)
 
-const fullSentence =`The Movie is ${sentence[0]} that ${sentence[1]}, I like it`;
-// console.log(fullSentence);
 
-const newSentence = ["The Movie is","[sentence [0]] that [sentence [1]]","I like it"];
-// console.log(newSentence);
-
-newSentence[1] = "good"
-// console.log(newSentence);
-
-
-const userAnswer= String(prompt("movie good or bad?"));
-console.log(`The user answer is ${userAnswer}`);
-
-if (wordNot < wordBad && wordNot!==-1 && wordBad!==-1)  {
-  console.log(newSentence)
+if (wordNot < wordBad)  {
+  console.log(sentence.replace(`${sentence.slice(wordNot,wordBad+3)}`, "good") )  
 } 
 
 
 
-
-// let sentence = "The Movie is not that bad";
-
-// let arrWord =sentence.split(" ");
-// console.log(arrWord);
-
-// let positionOfBad = arrWord.indexOf("bad");
-
-
-// arrWord.splice (positionOfBad,1, "good");
-
-// let newSentence = arrWord.join(" ");
-
-// console.log(newSentence);
-
-// // const wordNot = sentence.indexOf("not");
-// // const wordBad = sentence.indexOf("bad");
-
-// // if (wordNot < wordBad && wordNot!==-1 && wordBad!==-1) {
-// //   console.log(newSentence)
-// // } 
