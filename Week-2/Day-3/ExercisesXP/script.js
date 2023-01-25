@@ -183,3 +183,4 @@ names.sort();
 const secretSociety = names.map((names) => names[0]).join('')
 console.log(secretSociety)
 
+ 
