@@ -1,15 +1,28 @@
- userAnswer=prompt(" Please give us several world");
- let text = userAnswer;
- const myArray = userAnswer.split(" ");
- let word = myArray[0];
- let word1 = myArray[1];
- let word2 = myArray[2];
- let word3 = myArray[3];
- let word4 = myArray[4];
- let word5 = myArray[5];
+let userAnswer= prompt("Please give us several world");
+const myArray = userAnswer.split(" ");
 
-  for (let i = 0; i < myArray.length; i++) {
-    console.log(`* ${myArray[i]} *`); 
+function findlongest () {
+  let longest = 0;
+  for(let word of myArray){
+    if(word.length>longest){
+      longest = word.length;
+    }
   }
+  return longest;
+}
 
-  
+function addstarsTopBottom () {
+  const longestnum = findlongest();
+  console.log("*".repeat(longestnum+5));
+}
+
+function addwords (){
+  const longestnum = findlongest();
+  for (let i = 0; i < myArray.length; i++) {
+    console.log(`* ${myArray[i]} ${" ".repeat(longestnum-myArray[i].length)} *`); 
+  }  
+}
+
+addstarsTopBottom()
+addwords()
+addstarsTopBottom()

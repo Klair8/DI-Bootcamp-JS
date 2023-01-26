@@ -58,7 +58,7 @@ function calculateTip(){
     }
 }
 
-// calculateTip();
+calculateTip();
 
 // // // Exercise 3 : Find The Numbers Divisible By 23
 // // // Create a function call isDivisible() that takes no parameter.
@@ -170,7 +170,7 @@ function changeEnough(itemPrice,amountOfChange) {
         console.log("false")
     }
   }
-  console.log(changeEnough(4.35,[25, 20, 5, 0]));
+ changeEnough(4.35,[25, 20, 5, 0]);
 
 // Exercise 6 : Vacations Costs
 // Let’s create functions that calculate your vacation’s costs:
@@ -185,14 +185,13 @@ function hotelCost(){
     typeof userAnswer === "Number";
     if (userAnswer>=1){
         console.log(`Mazal Tov the price of your stay will be ${priceNight*userAnswer}$`);
-        return priceNight*userAnswer
-       } 
-        else {
+        return priceNight*userAnswer;
+       } else {
         console.log("Please let us know how many night will you stay");
         }
 }
 
-console.log(hotelCost());
+hotelCost();
 
 
 //   Define a function called planeRideCost().
@@ -207,7 +206,7 @@ function planeRideCost(){
     let answer= prompt(" What is your destination");
     let pPrice = 220;
     let lPrice = 183;
-    let oPrice = 300
+    let oPrice = 300;
     typeof answer === "string";
 
     if (answer=="london"){        
@@ -220,10 +219,10 @@ function planeRideCost(){
     } 
     else      
         console.log(`its great , the price for the trip is ${oPrice}$`);
-        return oPrice,lPrice,pPrice 
+        return oPrice,lPrice,pPrice ;
     } 
 
-    console.log(planeRideCost());
+planeRideCost();
 
 
 //  Define a function called rentalCarCost().
@@ -240,15 +239,15 @@ function rentalCarCost(){
     typeof rAnswer === "Number";
     if (rAnswer>=1){
         console.log(`The price of your rent will be ${pCar*rAnswer}$`);
-        return pCar*rAnswer
+        return pCar*rAnswer;
        } else if (rAnswer>10){        
         console.log(`The price of your rent will be ${pCar*rAnswer}$`);
-        return (pCar*rAnswer)*0.05
+        return (pCar*rAnswer)*0.05;
     } else {
         console.log("Please let us know how many night will you stay");
         }   
 }
-console.log(rentalCarCost());
+rentalCarCost();
 
 
 //   Define a function called totalVacationCost() that returns the total cost of the user’s vacation by calling the 3 functions that you created above.
@@ -262,58 +261,11 @@ console.log(rentalCarCost());
 //    accordingly
 
 
-function totalVacationCost(){
-  
-    function hotelCost(){
-        let priceNight = 140;
-        let userAnswer =prompt(" How many night will be your stay?");
-        typeof userAnswer === "Number";
-        if (userAnswer>=1){
-            console.log(`Mazal Tov the price of your stay will be ${priceNight*userAnswer}$`);
-            return priceNight*userAnswer
-           } 
-            else {
-            console.log("Please let us know how many night will you stay");
-            }
-    }
-
-    function planeRideCost(){
-        let answer= prompt(" What is your destination");
-        let pPrice = 220;
-        let lPrice = 183;
-        let oPrice = 300
-        typeof answer === "string";
-    
-        if (answer=="london"){        
-            console.log(`its great , the price for the trip is ${lPrice}$`);
-            
-        } 
-        else if (answer=="paris"){        
-            console.log(`its great , the price for the trip is ${pPrice}$`);
-            
-        } 
-        else      
-            console.log(`its great , the price for the trip is ${oPrice}$`);
-            return oPrice,lPrice,pPrice 
-        } 
-    
-        function rentalCarCost(){
-            let rAnswer= prompt(" Hi, How many day do you want to rent the car?");
-            let pCar = 40;
-            let percent=5;
-            typeof rAnswer === "Number";
-            if (rAnswer>=1){
-                console.log(`The price of your rent will be ${pCar*rAnswer}$`);
-                return pCar*rAnswer
-               } else if (rAnswer>10){        
-                console.log(`The price of your rent will be ${pCar*rAnswer}$`);
-                return (pCar*rAnswer)*0.05
-            } else {
-                console.log("Please let us know how many night will you stay");
-                }   
-        }
-        console.log(rentalCarCost());
-}
+function totalVacationCost(hotelCost,planeRideCost,rentalCarCost){
+    let sum = hotelCost + planeRideCost +rentalCarCost;
+    return sum;
+  }
 
 
-console.log(totalVacationCost());
+
+totalVacationCost();
