@@ -15,27 +15,48 @@ html,h1,h2,h3,h4,h5,h6,a{
     <title>Portfolio Project</title>
 </head>
 <body>
-
-<nav>
-     <ul>
-        <li><a href="#Works">Works</a></li>
-        <li><a href="#Portofolio">Portofolio</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li style="float:right"><a class="active" href="#about">About</a></li>
-    </ul>
-    <!-- Menu: dark mode + menu Burger -->
+<header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo"> CLS</a>
+        <ul class="nav-menu">
+           <li class="nav-item">
+                <a href="#" class="nav-link"> Works</a>
+           </li>
+            <li class="nav-item">
+               <a href="#" class="nav-link"> Portofolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"> Skills</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"> Contact Me</a>
+            </li>
+        </ul>
+        <div class="burger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 </nav>
+</header>
+
+
+
+
 
     <section class="top">
         <div class="variante">
             <div class="aboutme"> 
                 <div class="label"> Hello, my name is </div>
                 <h1>CLAIRE SACUTO</h1>
-                <div class="label"> I am a <strong>Web Developer</strong></div>
-                <!-- button to insert 
-                    <button class="btn draw-border">Draw Border</button>
-                     with Hover to Download the CV / near the links to my portfolio -->
-                     <!-- + button Pure CSS Click Effect avec la fleche -->
+                <p> I am a <strong> Web Developer</strong></p> 
+                    <button class="btn">
+                       <svg width="100px" height="30px" viewBox="0 0 100 30" class="border">
+                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                        <span>Download CV</span>
+                      </button>
             </div>
             <div class="picture"> 
                 <div class="rond"></div> 
@@ -92,5 +113,6 @@ html,h1,h2,h3,h4,h5,h6,a{
 <br>
 
 <footer> Copyright by Claire </footer>
+<script src="script.js"></script>
 </body>
 </html>
