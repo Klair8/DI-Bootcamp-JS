@@ -40,12 +40,6 @@ const para=document.getElementsByTagName("p");
  };
 }
 
- const tittleH1 = document.getElementsByTagName("h1");
- tittleH1.addEventListener("resize", biggerFont);
-
- function biggerFont(){
-    tittleH1.style.fontSize = "60px";
- };
 
 // Exercise 2 ( please put ex1 in comment)
 // Retrieve the form and console.log it.
@@ -73,19 +67,23 @@ console.log(fName1);
 // enter in the form and not do a refresh on the page
 
 // Get the values of the input tags, make sure that they are not empty,
-//  create an li per input value, then append them to a the 
-// <ul class="usersAnswer"></ul>, below the form.
+// create an li per input value, then append them to a the  <ul class="usersAnswer"></ul>, below the form.
+
 const form = document.forms[0];
 form.addEventListener("submit", retrieveValue);
 
 function retrieveValue(e){
     e.preventDefault(); 
-    const valueInput = e.target.fname.value;
+    const valuefName = e.target.fname.value;
+    const valueLName = e.target.lname.value;
     const list =  document.createElement("li");
-    const text = document.createTextNode(`the user types ${valueInput}`)
+    const text = document.createTextNode(`the user types ${valuefName} and ${valueLName}`)
     list.appendChild(text);
     document.firstElementChild.lastElementChild.children[1].appendChild(list)
 }
+
+
+
 
 // Exercise 3 ( please put the exercises before in comment)
 // In the JS file:
