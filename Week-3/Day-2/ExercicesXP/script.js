@@ -75,8 +75,8 @@ console.log(fName1);
 // Get the values of the input tags, make sure that they are not empty,
 //  create an li per input value, then append them to a the 
 // <ul class="usersAnswer"></ul>, below the form.
-// const form = document.forms[0];
-// form.addEventListener("submit", retrieveValue);
+const form = document.forms[0];
+form.addEventListener("submit", retrieveValue);
 
 function retrieveValue(e){
     e.preventDefault(); 
