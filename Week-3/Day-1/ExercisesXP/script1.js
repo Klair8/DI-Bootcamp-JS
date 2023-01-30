@@ -84,52 +84,34 @@ console.log(liTag);
 
 // i didnt succed to do it ..its not complete sorry //
 
-function generateTable() {
+// function generateTable() {
 
     const allBooks = [
         {
         title: "Lord of the Ring",
         author: "Tolkien",
-        // image : a url,
-        alreadyRead : true
+        image :"lotr.jpeg",
+        alreadyRead : true,
         },
         {
         title: "Circe",
         author:"Madeline Miller",
-        // image : a url,
-        alreadyRead :false
+        image:"circe.jpeg",
+        alreadyRead :false,
         },
     ]
 
-    // creates a <table> element and a <tbody> element
-    const tbl = document.createElement("table");
-    const tblBody = document.createElement("tbody");
-  
-    // creating all cells
-    for (let i = 0; i < 2; i++) {
-      // creates a table row
-      const row = document.createElement("tr");
-      const rowtext = document.createTextNode("tittle");
-  
-      for (let j = 0; j < 2; j++) {
-        const cell = document.createElement("td");
-        const cellText = document.createTextNode(`cell in row ${allBooks}[0], column ${j}`);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
+    function buildTable (){
+      const heads= ["tittle","author","image"];
+    const table = document.createElement("table");
+    const row_head = document.createElement("try");
+   
+    for (let i =o ; i<heads.length; i++)
+    const tHead= document.createElement ("th")
+      const contentHead= document.createTextNode(heads[i]);
+        tHead.appendChild(contentHead);
+        row_head.appendChild(tHead);
       }
   
-      // add the row to the end of the table body
-      tblBody.appendChild(row);
-    }
-  
-    // put the <tbody> in the <table>
-    tbl.appendChild(tblBody);
-    // appends <table> into <body>
-    document.body.appendChild(tbl);
-    // sets the border attribute of tbl to '2'
-    tbl.setAttribute("border", "2");
-  }
-
-
-  generateTable();
+      buildTable ();
 
