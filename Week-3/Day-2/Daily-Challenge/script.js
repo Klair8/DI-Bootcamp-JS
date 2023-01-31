@@ -17,16 +17,16 @@ function createAStorie(evt){
         const valuePlace = evt.target.place.value;
         const para =  document.createElement("p");
         
-        if (valueNoun ==0 || valueAdjective==0 || valuePerson==0 ||valueVerb==0 ||valuePlace==0) {
+        if (valueNoun =="" || valueAdjective=="" || valuePerson==""||valueVerb=="" ||valuePlace=="") {
             alert("Please enter the data");
-          } else{
+          } else {
         const text = document.createTextNode(`Along time ago its was a person name ${valueNoun} that love , but really love to be ${valueAdjective}. 
         Unfortunatly ,some of his.her near family like  ${valuePerson} were always ${valueVerb} about it .
         ${valueNoun} feel that they weren't any other option other and decide to leave for a new adventure in${valuePlace}`)
-
         para.appendChild(text);
         document.body.children[2].appendChild(para)
     }
-}
+  }
+
      
 
