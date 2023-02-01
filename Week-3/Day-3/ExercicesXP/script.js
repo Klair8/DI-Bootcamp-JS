@@ -25,7 +25,8 @@ document.querySelector("#container").appendChild(paragraph);
 }
 
 
-// Part III
+// Part III ==> do not forget to put in comment the exercice before!!
+
 // In your Javascript file, using setInterval, call a function every 2 seconds.
 // The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
 
@@ -85,11 +86,11 @@ let pos = 0
 
 
 
-// Exercise 3:( please see index2 ==> we didnt do it in the course i found a god exemple and use it)
-// Copy the code above, to a structured HTML file.
-// In your Javascript file add the functionality which 
-// will allow you to drag the box and drop it into the target. 
-// Check out the Course Notes named DOM animations.
+// // Exercise 3:( please see index2 ==> we didnt do it in the course i found a god exemple and use it)
+// // Copy the code above, to a structured HTML file.
+// // In your Javascript file add the functionality which 
+// // will allow you to drag the box and drop it into the target. 
+// // Check out the Course Notes named DOM animations.
 
 
 // position of mouse
