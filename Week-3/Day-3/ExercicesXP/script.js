@@ -3,11 +3,11 @@
 // In your Javascript file, using setTimeout, call a function after 2 seconds.
 // The function will alert “Hello World”.
 
-setTimeout(helloWorld, 2000);
+// setTimeout(helloWorld, 2000);
 
-function helloWorld () { 
- alert("hello World")
-}
+// function helloWorld () { 
+//  alert("hello World")
+// }
 
 
 // Part II
@@ -15,14 +15,14 @@ function helloWorld () {
 // The function will add a new paragraph <p>Hello World</p> to the <div id="container">.
 
 
-setTimeout(helloWorld, 2000)
+// setTimeout(helloWorld, 2000)
 
-function helloWorld () { 
-const paragraph = document.createElement("p");
-const text = document.createTextNode( "Hello World ");
-paragraph.appendChild(text);
-document.querySelector("#container").appendChild(paragraph);
-}
+// function helloWorld () { 
+// const paragraph = document.createElement("p");
+// const text = document.createTextNode( "Hello World ");
+// paragraph.appendChild(text);
+// document.querySelector("#container").appendChild(paragraph);
+// }
 
 
 // Part III ==> do not forget to put in comment the exercice before!!
@@ -34,26 +34,26 @@ document.querySelector("#container").appendChild(paragraph);
 // // Instead of clicking on the button, the interval will be cleared as soon 
 // as there will be 5 paragraphs inside the <div id="container">.
 
-const message = setInterval(helloWorld, 2000)
-let counter = 1
+// const message = setInterval(helloWorld, 2000)
+// let counter = 1
 
-function helloWorld () { 
-const paragraph = document.createElement("p");
-const text = document.createTextNode( "Hello World ");
-paragraph.appendChild(text);
-document.querySelector("#container").appendChild(paragraph);
-if (counter==5){
-    clearInterval(message);
-}
-counter++;
-}
+// function helloWorld () { 
+// const paragraph = document.createElement("p");
+// const text = document.createTextNode( "Hello World ");
+// paragraph.appendChild(text);
+// document.querySelector("#container").appendChild(paragraph);
+// if (counter==5){
+//     clearInterval(message);
+// }
+// counter++;
+// }
 
-const btn = document.querySelector("#clear");
-btn.addEventListener("click",stopMessage)
+// const btn = document.querySelector("#clear");
+// btn.addEventListener("click",stopMessage)
 
- function stopMessage() {
-    clearInterval(message);
- }
+//  function stopMessage() {
+//     clearInterval(message);
+//  }
   
 
 // Exercise 2: Move the Box ( dont forget to comment the others exercises )
@@ -65,23 +65,23 @@ btn.addEventListener("click",stopMessage)
 // Hint : use clearInterval as soon as the box reaches the right end side of the container
 
 
-const redBox = document.getElementById("animate");
+// const redBox = document.getElementById("animate");
 
-const btn = document.getElementsByTagName("button")[0];
-btn.addEventListener("click", myMove);
+// const btn = document.getElementsByTagName("button")[0];
+// btn.addEventListener("click", myMove);
 
-let pos = 0  
+// let pos = 0  
 
-    function myMove() {
-      setInterval(function(){
-            if  (pos === 350)  {
-              clearInterval();
-            }
-            else {
-                pos++;
-                redBox.style.left = pos + 'px';
-            } }, 1000)
-        };
+//     function myMove() {
+//       setInterval(function(){
+//             if  (pos === 350)  {
+//               clearInterval();
+//             }
+//             else {
+//                 pos++;
+//                 redBox.style.left = pos + 'px';
+//             } }, 1000)
+//         };
 
 
 
@@ -127,7 +127,6 @@ const mouseMoveHandler = function (e) {
 const mouseUpHandler = function () {
     // Remove the handlers of `mousemove` and `mouseup`
     document.removeEventListener('mousemove', mouseMoveHandler);
-    document.removeEventListener('mouseup', mouseUpHandler);
 };
 
 Redbox.addEventListener('mousedown', mouseDownHandler);
