@@ -43,6 +43,7 @@ button{
 
 #paletofColor div{
  border: 2px solid black;
+ gap: 2px;
 }
 
 #colorZone{
