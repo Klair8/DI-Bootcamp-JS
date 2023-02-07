@@ -80,15 +80,15 @@
 // Invoke the inner function ONCE inside the outer function. 
 // Then invoke the outer function in the global scope.
 
-// function makeJuice (size){
+function makeJuice (size){
 
-//      function addIngredients(first,second, three){
-//         console.log(`The client wants a ${size} size juice, containing ${first }, ${second },${three}` )
-//     }
-//     addIngredients("apple","melon","strawberry");
+     function addIngredients(first,second, three){
+        console.log(`The client wants a ${size} size juice, containing ${first }, ${second },${three}` )
+    }
+    addIngredients("apple","melon","strawberry");
   
-// }
-// makeJuice("small")
+}
+makeJuice("small")
 
 //  Part II:
 // In the makeJuice function, create an empty array named ingredients.

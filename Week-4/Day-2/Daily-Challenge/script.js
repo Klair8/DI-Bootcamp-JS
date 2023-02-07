@@ -15,9 +15,7 @@ const groceries = {
 // Use the forEach method.
 
 const displayGroceries = () => {
-    Object.values(groceries.fruits).forEach(value => {
-   console.log(value)
-    })
+    Object.values(groceries.fruits).forEach(value => console.log(value))
 }
 displayGroceries()
 
@@ -27,13 +25,13 @@ displayGroceries()
 // 2/Change the client variable to “Betty”.
 
 // Will we also see this modification in the user variable ? Why ?
-// ==> yes the let client is in a global scope and its located at the beginning of the script too
+// ==> no its not the same name , because they dont have the same adress as we redefine the name, they point to differents adresses 
 
 // 3/In the function, create a variable named shopping that is equal to the groceries variable.
 // Change the value of the totalPrice key to 35$.
 
 //  Will we also see this modification in the shopping object ? Why ?
-// Yes we will see the modification because we made shopping and grocerie to get the same value , so same adresse same object 
+// Yes we will see the modification because we made shopping and grocerie to get the same value , same reference in the heap
 
 // Change the value of the payed key to false.
 
@@ -43,11 +41,11 @@ displayGroceries()
 // Invoke the cloneGroceries function.
 
 const cloneGroceries = () => {
-let user = client
-user = "betty"
-const shopping = groceries
-shopping.totalPrice = $35  
-shopping.other.payed = false 
+let user = client;
+client = "betty";
+const shopping = groceries;
+groceries.totalPrice = "$35" ; 
+groceries.other.payed = "false" ;
 }
 
 cloneGroceries()
