@@ -80,15 +80,18 @@
 // Invoke the inner function ONCE inside the outer function. 
 // Then invoke the outer function in the global scope.
 
-function makeJuice (size){
+// function makeJuice (size){
 
-     function addIngredients(first,second, three){
-        console.log(`The client wants a ${size} size juice, containing ${first }, ${second },${three}` )
-    }
-    addIngredients("apple","melon","strawberry");
+//      function addIngredients(first,second, three){
+//         const section = document.getElementById("container");
+//         const sentence =`The client wants a ${size} size juice, containing ${first }, ${second },${three}` 
+//         const text = document.createTextNode(sentence);
+//         section.appendChild(text);
+//     }
+//     addIngredients("apple","melon","strawberry");
   
-}
-makeJuice("small")
+// }
+// makeJuice("small")
 
 //  Part II:
 // In the makeJuice function, create an empty array named ingredients.
@@ -103,19 +106,28 @@ makeJuice("small")
 // function TWICE. Then invoke once the displayJuice function. Finally, invoke the makeJuice 
 // function in the global scope.
 
-// function makeJuice (size){
-//  const ingredients= []
+function makeJuice (size){
+ const ingredients= []
 
-//     function addIngredients(first,second, three){
-//         ingredients.push(first,second, three)
-// //        console.log(`The client wants a ${size} size juice, containing ${first }, ${second },${three}` )
-//   }
+    function addIngredients(first,second, three){
+        ingredients.push(first)
+        ingredients.push(second)
+        ingredients.push(three)
+ 
+  }
 
-//    function displayJuice(){
-//     console.log(`The client wants a ${size} size juice, containing ${ingredients[]}` )
-//    }
-//    addIngredients("apple","melon","strawberry");
-//    addIngredients("tomato","whisky","gin");
-//    displayJuice()
-// }
-// makeJuice("small")
+   function displayJuice(){
+    const section = document.getElementById("container");
+    let sentence =`The client wants a ${size} size juice, containing :` 
+    ingredients.forEach(elem=>{
+        sentence += `${elem}, `
+    })
+    const text = document.createTextNode(sentence);
+    section.appendChild(text);
+   }
+
+   addIngredients("apple","melon","strawberry");
+   addIngredients("tomato","whisky","gin");
+   displayJuice()
+}
+makeJuice("small")
