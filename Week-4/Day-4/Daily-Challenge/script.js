@@ -25,7 +25,7 @@ class Video {
     }
 
     watch(){
-    console.log(`${this.uploader} watched all ${this.time} minn of ${this.title}!`)
+    console.log(`${this.uploader} watched all ${this.time} min of ${this.title}!`)
     }
 
 }
