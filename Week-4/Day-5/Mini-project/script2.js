@@ -1,3 +1,28 @@
+
+const robotForm = document.forms[0]
+robotForm.addEventListener("input",function(e){
+    e.preventDefault();
+const value  = robotForm.querySelector('input[type="text"]').value.toLowercase()
+});
+
+
+// function robotSearch(robots, value){
+//   let passed = []
+//   for(let name of robots){
+//     if (value(name)){
+//         passed.push(name);
+//     }
+//   }
+// return passed
+// }
+
+
+
+
+
+
+
+
 const robots = [
     {
       id: 1,
@@ -71,53 +96,31 @@ const robots = [
     }
     ];
 
-    function DisplayRobot(){
+
+    function displayRobot(){
+        // forEach loop for Array
         robots.forEach((robot)=>{
         const {name,email,image} = robot;
 
-    const container = document.getElementById("container");  
-    const card = document.createElement("div")
-    const nameP = document.createElement("p")
-    const emailP = document.createElement("p")
-    const imageRobot =  document.createElement("img")
-    
-    const namevalue = document.createTextNode(name)
-    const emailvalue = document.createTextNode(email)
-    nameP.appendChild(namevalue);
-    emailP.appendChild(emailvalue)
-    imageRobot.src = image;
-    
-    card.style.border= "1px solid black";
-    card.style.backgroundColor = "rgb(62, 122, 155)";
-    card.appendChild(imageRobot,nameP,emailP)
-    container.appendChild(card)
-    
-     })
+        const container = document.getElementById("container");
+        const cart = document.createElement("div");
+        const nameP = document.createElement("p");
+        const emailRobot = document.createElement("p");
+        const imageRobot = document.createElement("img");
+
+        const nameValue = document.createTextNode(name);
+        const emailValue = document.createTextNode(email);
+        
+        nameP.appendChild(nameValue);
+        emailRobot.appendChild(emailValue);
+        imageRobot.src = image;
+
+        cart.style.border= "2px solid orange";
+        container.appendChild(cart);
+        cart.appendChild(imageRobot,nameP,emailRobot);
+        })
     }
-    DisplayRobot();
-    
-       
-// Input callback function
-const myForm = document.forms[0];
-myForm.addEventListener("input",robotsSearch)
 
+    displayRobot()
 
-
-function robotsSearch(e){
-  // ===> eCriture dans search : done
-  const value = e.target.value
-
-  console.log("valeurecrise",value)
-
-  // loop dans les noms pour trouver les bons :done
-  const result = []
-  for (let i = 0; i < robots.length; i++) {
-  let robotName = robots[i].name
-  robotName.includes(value)?  result.push(robots[i].name) :  ""
-}
-console.log("resultatsearch", result)
-DisplayRobot(result);
-
-}
-
-
+ 
