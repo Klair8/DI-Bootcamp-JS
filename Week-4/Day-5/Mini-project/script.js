@@ -71,7 +71,7 @@ const robots = [
     }
     ];
 
-    function DisplayRobot(){
+    function DisplayRobot(robots){
         robots.forEach((robot)=>{
         const {name,email,image} = robot;
 
@@ -93,8 +93,9 @@ const robots = [
     container.appendChild(card)
     
      })
+     
     }
-    DisplayRobot();
+    DisplayRobot(robots);
     
        
 // Input callback function
@@ -102,22 +103,17 @@ const myForm = document.forms[0];
 myForm.addEventListener("input",robotsSearch)
 
 
-
 function robotsSearch(e){
-  // ===> eCriture dans search : done
-  const value = e.target.value
 
+  const value = e.target.value
+  // .toLowerCase()
   console.log("valeurecrise",value)
 
-  // loop dans les noms pour trouver les bons :done
-  const result = []
-  for (let i = 0; i < robots.length; i++) {
-  let robotName = robots[i].name
-  robotName.includes(value)?  result.push(robots[i].name) :  ""
-}
-console.log("resultatsearch", result)
-DisplayRobot(result);
+  const result = robots.filter(elem => elem = elem.name.includes(value))
+    // .map(elem => elem.name);
 
-}
+  DisplayRobot(result);
 
+  console.log("resultatsearch", result)
+}
 
