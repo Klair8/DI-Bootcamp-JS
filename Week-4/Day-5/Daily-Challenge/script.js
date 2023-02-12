@@ -8,12 +8,11 @@
 // An anagram is another word or phrase formed by 
 // rearranging letters of the first word or phrase.
 
-// Do we need to consider whitespace?
-// Trim whitespace prior to comparison.
 
 function anagram (sentence1,sentence2){
     const str1 = sentence1.toLowerCase().split(" ").join("");
     const str2 = sentence2.toLowerCase().split(" ").join("");
+    
     if (str1.length != str2.length) return false;
 
     const total = {}
@@ -31,7 +30,7 @@ function anagram (sentence1,sentence2){
     return differences.every((num)=> num === 0) 
     
  
-}
+
 
 const result1 = anagram("bassa","toujours"); // false
 console.log("result1", result1)
@@ -39,3 +38,14 @@ const result2 = anagram("bassa","assab"); // true
 console.log("result2", result2)
 
 
+
+
+// others options : 
+
+// function anagramCheck(wordOne, wordTwo) {
+//     let wordOneSorted = wordOne.toLowerCase().split("").sort().join(``).trim();
+//     let wordTwoSorted = wordTwo.toLowerCase().split("").sort().join(``).trim();
+//     str1 === str2? console.log('is an anagram') : console.log('not an anagram');
+// }
+
+// anagramCheck(prompt(`first word for comparison`), prompt(`second word for comparison`))

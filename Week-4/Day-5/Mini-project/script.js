@@ -71,13 +71,15 @@ const robots = [
     }
     ];
 
+    const container = document.getElementById("container");  
+
     function DisplayRobot(robots){
         robots.forEach((robot)=>{
         const {name,email,image} = robot;
 
-    const container = document.getElementById("container");  
     const card = document.createElement("div")
     const nameP = document.createElement("p")
+    nameP.classList.add("nameRob");
     const emailP = document.createElement("p")
     const imageRobot =  document.createElement("img")
     
@@ -89,9 +91,10 @@ const robots = [
     
     card.style.border= "1px solid black";
     card.style.backgroundColor = "rgb(62, 122, 155)";
-    card.appendChild(imageRobot,nameP,emailP)
+    card.classList.add("cardRobot");
+    card.append(imageRobot,nameP,emailP) //use append only when mutiple value !!!!
     container.appendChild(card)
-    
+  
      })
      
     }
@@ -99,21 +102,30 @@ const robots = [
     
        
 // Input callback function
-const myForm = document.forms[0];
-myForm.addEventListener("input",robotsSearch)
+const inputRobot = document.getElementById("myInput")
+inputRobot.addEventListener("input",robotsSearch)
 
 
 function robotsSearch(e){
-
-  const value = e.target.value
-  // .toLowerCase()
+  const value = e.target.value.toLowerCase();
   console.log("valeurecrise",value)
 
-  const result = robots.filter(elem => elem = elem.name.includes(value))
-    // .map(elem => elem.name);
+// retrive the robots from the DOM using querySelector!!!!!
+  const allRobots = document.querySelectorAll (".cardRobot");
+  console.log(allRobots)
 
-  DisplayRobot(result);
+  // NOW loop 
+  allRobots.forEach(elem => {
+    const nameRobot = elem.querySelector(".nameRob").textContent;
+    console.log(nameRobot);
 
-  console.log("resultatsearch", result)
+    if(!nameRobot.toLowerCase().includes(value)){
+      elem.style.display = "none";
+    }else{
+      elem.style.display = "block"
+    }
+  })
 }
+
+
 
