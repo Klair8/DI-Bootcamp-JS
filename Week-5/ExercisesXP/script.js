@@ -18,7 +18,9 @@
 // with a POST method.(you can use the same HTML file for the action url)
 // Where will the sent data appear? Hint : Look at the Network Tab
 
-// in the network TAB
+// in the network TAB, you go to the filter "Doc, there you choose
+// the "search" document and you can see on the playload the form DATA and there 
+// you can see username and the comments datas that were fill.
 
 
 // 🌟 Exercise 3 : JSON Mario
@@ -48,6 +50,7 @@ const marioGame = {
       }
   },
 }
+
 // Convert this JS object into a JSON object. What happens to the nested objects ?
     // the nested object had been supported and converted automatically.
 const newMario = JSON.stringify(marioGame)
@@ -63,5 +66,5 @@ console.log(newMarioOne)
 
 // Use your web inspector to add a breakpoint. 
 // Check the values of the JSON object in the debugger.
-
-//the debugger pause on the breakpoint 
+  
+   //the debugger pause automatically on the frist JSON stringify
