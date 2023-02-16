@@ -18,9 +18,7 @@ Promise.all([promise1,promise2,promise3])
 .then(values=>{
     console.log(values);
 })
-.catch((){
-    throw Error ('error')
-})
+.catch(() => console.log('error'))
 
 
 //the promise.all take an array of Promises and returns a new promise.

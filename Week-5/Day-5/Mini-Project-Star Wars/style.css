@@ -1,0 +1,43 @@
+
+*{
+   color: white;
+  background-image: url('wallpaper-mania.com_High_resolution_wallpaper_background_ID_77701909117.jpg'); 
+}
+
+h1{
+    font-family: Star Jedi Outline;
+    font-size: 60px;
+    border-color: black;
+    color: #FFE81F;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border : 2px solid  #FFE81F;
+    border-radius: 5px;
+    width : 40%;
+    height :300px;
+    font-size: 18px;
+    font-weight: 600;   
+}
+
+
+button{
+    background-color: rgb(132, 131, 131);
+    border: 2px solid  #FFE81F;
+    width : 20%;
+    height :30%;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}

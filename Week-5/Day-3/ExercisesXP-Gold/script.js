@@ -23,6 +23,22 @@ Promise.all(urls.map(url => {
       console.log(results[3].result.properties)
 }).catch(() => console.log('error'))
 
+// Another Way :
+
+async function getData(){
+  const newFetchArray = urls.map(url=> fetch(url));  //promise
+  const allReponses = await Promise.all(newFetchArray);  // array of objects
+  console.log(allReponses)
+
+  const newResponseArray= allReponses.map((responses)=> responses.json())
+  console.log(newResponseArray)
+
+  const allResults = await Promise.all(newResponseArray)
+  console.log(allResults)
+
+}
+getData()
+
 
 // Part II
 // Change one of the urls in the array provided above. 
