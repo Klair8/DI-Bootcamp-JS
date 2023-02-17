@@ -4,7 +4,6 @@ buttonFetch.addEventListener("click", getData);
 async function getData(){
     refreshdataImg()
     refreshdata()
-    getAction()
     try{
     const random = getRandomInt (1, 100)
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
