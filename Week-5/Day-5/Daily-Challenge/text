@@ -1,0 +1,26 @@
+#HTML
+container 
+input button 
+input 2 deroulants
+input 1 resultat ?
+
+#CSS
+body:flex
+constainer:flex
+
+#JS
+
+-variable input : currency user currently has
+-input deroulant : currence they would like to receive
+-input button :  convert
+-input resultat : based on correct exchange from the data API's
+
+- 1 - fetch all the supported currencies, in order to add the currencies options (ie FROM - To)
+ Check out this page on Supported Codes Endpoint from the ExchangeRate API documentation.
+
+-2- To convert from a currency, to another one,
+==> fetch conversion rate from the Pair Conversion API endpoint. 
+Check out this page on Pair conversion requests from the ExchangeRate API documentation.
+Hint: You could also supply an optional AMOUNT variable in the query of the request.
+
+

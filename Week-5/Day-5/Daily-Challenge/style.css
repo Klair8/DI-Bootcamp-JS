@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    padding: 50px 20px;
+    border: 2px solid red;
+    width: 50%;
+    height: 400px;
+    
+}
+
+label{
+    
+}

@@ -13,6 +13,7 @@ try{
         throw new Error ("Ohh No !! Something went wrong")
     }
     const data = await response.json();
+    console.log(data)
     if(data.message == 'not found') {
         throw new Error("Ohh No !! Couldnt find the Star Wars Characters");
     }
@@ -49,7 +50,7 @@ async function retreiveWorld(world){
         throw new Error ("Ohh No !! Something went wrong")
     }
     const dataWorld = await response1.json();
-  
+     
     const planet = dataWorld.result.properties.name;
     const sentencePlanet= (`Home Word: ${planet}`);
     console.log(planet)
