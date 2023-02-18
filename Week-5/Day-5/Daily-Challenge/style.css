@@ -1,16 +1,33 @@
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(pawel-czerwinski-ypqyuASFNps-unsplash.jpg);
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     padding: 50px 20px;
-    border: 2px solid red;
+    border-width: 4px;
+    border-color: rgb(0, 34, 255);
+    border-style: double;
     width: 50%;
     height: 400px;
     
 }
 
-label{
-    
+button{
+  width: 60px;
+
+}
+
+#result{
+    text-align: center;
+    width: 150px;
+    height: 60px;
+    border: 2px solid rgb(255, 255, 255);
 }

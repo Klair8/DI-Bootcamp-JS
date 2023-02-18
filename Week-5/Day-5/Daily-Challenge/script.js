@@ -1,10 +1,8 @@
-const button = document.getElementById("button")
-button.addEventListener("submit", convert)
+const form = document.forms[0]
+form.addEventListener("submit", convert)
 
-const conFr = document.getElementById("converterFr")
-const conTo = document.getElementById("converterTo")
-const select = document.getElementsByTagName("select")
-
+const conFr = document.querySelector("#converterFr");
+const conTo = document.querySelector("#converterTo");
 
 async function getCurrency () {
     try{
@@ -33,10 +31,10 @@ getCurrency()
 function tagOption(list,tag,value){
     list.forEach(curr => {
         let option = document.createElement("option");
-        console.log(option)
+        // console.log(option)
 
         option.value=`${curr[0]}`
-        console.log(option.value)
+        // console.log(option.value)
 
         if(curr[0]=== value){
             option.selected=true
@@ -48,33 +46,36 @@ function tagOption(list,tag,value){
 }
 
 
-function convert(e){
-    e.preventDefault()
-    const currencyFrom = e.target.converterFr.value;
-    const currencyTo = e.target.converterTo.value;
-    const amount = e.target.amount.value;
-    fetchConvertion(currencyFrom,currencyTo,amount)
+function convert(event){
+    event.preventDefault();
+    console.log(event.target.getAttribute('value'));
+    const fromCurrency = event.target.converterFr.value;
+    const toCurrency = event.target.converterTo.value;
+    const amt = event.target.amount.value;
+ 
+    fetchConvertion(fromCurrency,toCurrency ,amt)
 }
 
-// // console.log(fetch("https://v6.exchangerate-api.com/v6/6c6d85f2110b94b7dd558fe7/pair/EUR/GBP"))
+// console.log(fetch("https://v6.exchangerate-api.com/v6/6c6d85f2110b94b7dd558fe7/pair/EUR/GBP"))
 
-// async function fetchConvertion(from,to,amount){
-//     try{
-//         const response = await fetch(`https://v6.exchangerate-api.com/v6/6c6d85f2110b94b7dd558fe7/pair/${from}/${to}/${amount}`)
-//         console.log(response)
-//         if(response.status !==200){
-//             throw new Error(`ERROR in function`)
-//         }
-//         const result = await response.json()
+async function fetchConvertion(from,to,amount){
+    try{
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/6c6d85f2110b94b7dd558fe7/pair/${from}/${to}/${amount}`)
+        console.log(response)
+        if(response.status !==200){
+            throw new Error(`ERROR in function`)
+        }
+        const result = await response.json()
+        console.log(result)
+        
+        displayResult(result.conversion_result,result.target_code)
 
-//         displayResult(result.conversion_result,result.target_code)
+    } catch(err){
+        console.log(err)
+    }
+}
 
-//     } catch(err){
-//         console.log(err)
-//     }
-// }
-
-// async function displayResult(res,curr){
-//     const result = document.getElementById("amount")
-//     result.textContent = res +" "+ curr
-// }
+async function displayResult(res,curr){
+    const p = document.getElementById("result")
+    p.textContent = res +" "+ curr
+}
