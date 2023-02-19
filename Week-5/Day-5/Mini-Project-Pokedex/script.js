@@ -45,7 +45,7 @@ async function getData(){
         displayData(sentenceType)
         displayData(sentenceHeight)
         displayData(sentenceWeight)
-
+    
 
     } catch (err){
         reject("Oupppps we lost you!!")
@@ -118,31 +118,23 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-
-// console.log(fetch("https://pokeapi.co/api/v2/"))
-
+//https://pokeapi.co/api/v2/{endpoint}/
 // const buttonForward = document.querySelector("#forward");
-// buttonForward.addEventListener("click", getAction);
+// buttonForward.addEventListener("click", nextPokemon);
 
-// async function getAction(){
-//     try{
-//     const response = await fetch("https://pokeapi.co/api/v2/pokedex/")
-//     console.log(response)
-//         if (response.status !==200){
-//         throw new Error ("Ohh No !! Something went wrong")
+// async function nextPokemon(next){ // put th enmae of the function inside the Getdata one ..before 
+//         const response1 = await fetch(next)
+//         console.log(response1)
+//         if(response1.status !== 200){
+//             throw new Error ("Ohh No !! Something went wrong")
 //         }
-//     const data = await response.json();
-//     console.log(data)
-//         if(data.message == 'not found') {
-//         throw new Error("Ohh No !! Couldnt find the Pokemon Characters");
-//         }
-//         const forward = data.next
-//         console.log(forward)
+//         const dataNext = await response1.json();
+//         console.log(dataNext)
 
-//     } catch (err){
-//         reject("Oupppps we lost you!!")
+//         // const planet = dataWorld.result.properties.name;
+//         // const sentencePlanet= (`Home Word: ${planet}`);
+//         // console.log(planet)
+    
+//         // displayData()
 //     }
-// }
 
-// getAction()
