@@ -1,12 +1,68 @@
 const buttonFetch = document.querySelector("#fetch");
-buttonFetch.addEventListener("click", getData);
+// buttonFetch.addEventListener("click", getData);
+let random;
+buttonFetch.addEventListener("click", getRandomInt);
 
-async function getData(){
+// async function getData(newnum){
+//     console.log("random", random);
+//     console.log("newnum", newnum);
+//     refreshdataImg()
+//     refreshdata()
+//     try{
+//     const random = newnum || getRandomInt(1, 100)
+//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
+//     console.log(response)
+//         if (response.status !==200){
+//         throw new Error ("Ohh No !! Something went wrong")
+//         }
+//     const data = await response.json();
+//     console.log(data)
+//         if(data.message == 'not found') {
+//         throw new Error("Ohh No !! Couldnt find the Pokemon Characters");
+//         }
+
+//         const pokemonImg = data.sprites.front_shiny
+//         console.log(pokemonImg)
+
+//         const pokemonName = data.name
+//         console.log(pokemonName)
+
+//         const pokemonId = data.id
+//         const sentenceId = `ID:  ${pokemonId}`
+//         console.log("id:",sentenceId)
+
+//         const pokemonType = data.types[0].type.name
+//         const sentenceType = `Type:  ${pokemonType}`
+//         console.log("type:",sentenceType)
+
+//         const pokemonHeight = data.height
+//         const sentenceHeight = `Height:  ${pokemonHeight}`
+//         console.log("height:",sentenceHeight)
+
+//         const pokemonWeight = data.weight
+//         const sentenceWeight = `Weight:  ${pokemonWeight}`
+//         console.log("weight:",sentenceWeight)
+
+//         displayDataImg(pokemonImg)
+//         displayDataN(pokemonName)
+//         displayData(sentenceId)
+//         displayData(sentenceType)
+//         displayData(sentenceHeight)
+//         displayData(sentenceWeight)
+    
+
+//     } catch (err){
+//         reject("Oupppps we lost you!!")
+//     }
+// }
+
+
+async function getData(num){
+    console.log("num", num);
     refreshdataImg()
     refreshdata()
     try{
-    const random = getRandomInt (1, 100)
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
     console.log(response)
         if (response.status !==200){
         throw new Error ("Ohh No !! Something went wrong")
@@ -52,8 +108,7 @@ async function getData(){
     }
 }
 
-
-getData()
+// getData()
 
 function displayData(allDatas){
    
@@ -112,29 +167,32 @@ function refreshdataImg(){
 }
 
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// function getRandomInt(min, max) {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+function getRandomInt() {
+    const min = Math.ceil(1);
+    const max = Math.floor(100);
+    // return 
+    random = Math.floor(Math.random() * (max - min + 1)) + min;
+    getData(random)
 }
 
 //https://pokeapi.co/api/v2/{endpoint}/
-// const buttonForward = document.querySelector("#forward");
-// buttonForward.addEventListener("click", nextPokemon);
+const buttonForward = document.querySelector("#forward");
+buttonForward.addEventListener("click", nextPokemon);
 
-// async function nextPokemon(next){ // put th enmae of the function inside the Getdata one ..before 
-//         const response1 = await fetch(next)
-//         console.log(response1)
-//         if(response1.status !== 200){
-//             throw new Error ("Ohh No !! Something went wrong")
-//         }
-//         const dataNext = await response1.json();
-//         console.log(dataNext)
+async function nextPokemon(){ // put th enmae of the function inside the Getdata one ..before 
+    const newnum = random + 1
+    random = newnum;
+    console.log("forward", newnum);
+    getData(newnum)
+}
 
-//         // const planet = dataWorld.result.properties.name;
-//         // const sentencePlanet= (`Home Word: ${planet}`);
-//         // console.log(planet)
-    
-//         // displayData()
-//     }
-
+// async function beforePokemon(){ // put th enmae of the function inside the Getdata one ..before 
+//     random --;
+//     await getData()
+// }
