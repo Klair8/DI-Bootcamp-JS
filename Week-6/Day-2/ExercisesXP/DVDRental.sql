@@ -50,14 +50,15 @@ SELECT film_id, title, description,length,rental_rate FROM film WHERE title ILIK
 
 -- Write a query which will find the 10 cheapest movies.
 SELECT amount FROM payment ORDER BY amount LIMIT 10
+SELECT rental_rate, film_id FROM film ORDER BY rental_rate LIMIT 10
 -- Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
 -- Bonus: Try to not use LIMIT.
 SELECT * FROM payment
 
-SELECT amount
-FROM payment
-WHERE amount= (SELECT MIN(amount)FROM payment)
-AND ID BETWEEN 11 AND 20
+SELECT rental_rate,title
+FROM film
+WHERE rental_rate = (SELECT MIN(rental_rate)FROM film)
+AND primary_key_index BETWEEN 11 AND 20
 
 
 -- Write a query which will join the data in the customer table and the payment table. 
