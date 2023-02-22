@@ -21,7 +21,7 @@ CREATE TABLE Customer (
 CREATE TABLE Customer_profil (
     id SERIAL PRIMARY KEY,
 	isLoggedIn BOOLEAN DEFAULT false,
-	customer_id INTEGER UNIQUE REFERENCES Customer (customer_id)
+	customer_id INTEGER UNIQUE REFERENCES Customer (customer_id) --ON DELETE CASCADE ON UPDATE CASCADE
 )
 
 
@@ -42,6 +42,9 @@ INSERT into Customer_profil (isLoggedIn, customer_id)
 VALUES 
 ( TRUE, (SELECT customer_id FROM customer WHERE first_name = 'John')),
 (FALSE, (SELECT customer_id FROM customer WHERE first_name = 'Jerome'))
+
+-- or (DEFAULT,(SELECT customer_id FROM customer WHERE first-name =''))
+
 --  TRUNCATE Customer_profil
 
 -- Use the relevant types of Joins to display:
@@ -53,6 +56,7 @@ FROM customer
 INNER JOIN Customer_profil  
 ON customer.customer_id = Customer_profil.customer_id
 WHERE isLoggedIn = TRUE
+-- also can do WHERE isLoggedIn (alone work because its like an if statemewnt)
 
 -- All the customers first_name and isLoggedIn columns - even the customers those who don’t have a profile.
 
@@ -103,6 +107,8 @@ CREATE TABLE student(
 	age integer CHECK(age<=15) NOT NULL
 )
 
+DROP table student
+
 -- Insert those students:
 -- John, 12
 -- Lera, 11
@@ -127,7 +133,8 @@ SELECT * FROM Book;
 CREATE TABLE library (
 	borrowed_date DATE NOT NULL,
 	book_fk_id INTEGER NOT NULL REFERENCES book (book_id) ON DELETE CASCADE ON UPDATE CASCADE,
-	student_id INTEGER NOT NULL REFERENCES student (student_id) ON DELETE CASCADE ON UPDATE CASCADE
+	student_id INTEGER NOT NULL REFERENCES student (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (book_fk_id,student_id)
 );
 
 DROP table library
@@ -160,18 +167,22 @@ SELECT * FROM library
 -- Select the name of the student and the title of the borrowed books
 
 SELECT title, name
-FROM Book
+FROM library
 INNER JOIN student 
-ON Book.book_id = student.student_id
+ON library.student_id = student.student_id
+INNER JOIN book
+ON Book.book_id = library.book_fk_id
 
 
 -- Select the average age of the children, that borrowed the book Alice in Wonderland
-SELECT AVG (age), title
-FROM Book
-INNER JOIN student 
-ON Book.book_id = student.student_id
+SELECT ROUND (AVG (age),2)
+FROM library
+INNER JOIN student
+ON library.student_id = student.student_id
+INNER JOIN book
+ON Book.book_id = library.book_fk_id
 WHERE title ILIKE '%Alice%'
-GROUP BY book_id
+
 
 -- Delete a student from the Student table, what happened in the junction table ?
 
@@ -180,7 +191,7 @@ SELECT * FROM student
 DELETE FROM student WHERE name ='John'
 
 SELECT * FROM library  
- --=> the student also dispaer from the junction table with all his informations
+ --=> the student also disapear from the junction table with all his informations
 
 
 
