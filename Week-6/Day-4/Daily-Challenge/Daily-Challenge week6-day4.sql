@@ -1,38 +1,54 @@
 -- Database: Daily-Challenge
 
 -- DROP DATABASE IF EXISTS "Daily-Challenge";
+-- An order can have many items, 
+-- but an item can belong to only one order.
 
-CREATE TABLE product_orders(
-	product_id SERIAL PRIMARY KEY,
-    product_name VARCHAR(100) NOT NULL, 
-    manufacture_place VARCHAR(100) NOT NULL,
-    materiels CHAR(10)
-)
+CREATE TABLE user_order (
+    order_id SERIAL PRIMARY KEY,
+    date_order DATE DEFAULT NOW()
+);
 
-DROP TABLE product_orders
+CREATE TABLE item (
+    item_id SERIAL PRIMARY KEY,
+    item_name VARCHAR(50),
+    price DECIMAL
+);
 
-			
-INSERT INTO product_orders (product_name, manufacture_place,materiels) 
-VALUES ('Kistera Chaise', 'Lyon', 'wood'),
-('Suzy Table', 'Marseille', 'inox'),
-('Sofa Maria', 'Nice', 'fabric')
+CREATE TABLE orders_item (
+    order_id INTEGER REFERENCES user_order (order_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    item_id INTEGER UNIQUE REFERENCES item (item_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    qty_item INTEGER,
+    PRIMARY KEY (order_id, item_id)
+);
 
-SELECT * FROM product_orders
+INSERT INTO item (item_name, price)
+VALUES ('phone', 300), ('scooter', 2000), ('headphones', 100);
 
+INSERT INTO user_order (date_order)
+VALUES ('2023-01-23'), (DEFAULT), ('2023-03-23');
 
-CREATE TABLE items(
-items_id INTEGER PRIMARY KEY,
-sale_date DATE DEFAULT NOW(),
-price integer NOT NULL,
-product_id INTEGER REFERENCES product_orders(product_id)
-)
+INSERT INTO orders_item (order_id, item_id, qty_item) 
+VALUES ((SELECT order_id FROM user_order WHERE date_order='2023-01-23'), 
+        (SELECT item_id FROM item WHERE item_name='scooter'), 2),
+        ((SELECT order_id FROM user_order WHERE date_order='2023-01-23'), 
+        (SELECT item_id FROM item WHERE item_name='phone'), 4),
+        ((SELECT order_id FROM user_order WHERE date_order='2023-03-23'), 
+        (SELECT item_id FROM item WHERE item_name='headphones'), 6);
 
-DROP TABLE items
+CREATE or REPLACE FUNCTION totalPrice (user_order_id INTEGER) 
+RETURNS INTEGER AS 
+$$
+DECLARE
+    total INTEGER;
+BEGIN
+      SELECT SUM(price*qty_item) INTO total
+      FROM orders_item
+      INNER JOIN item ON orders_item.item_id=item.item_id
+      WHERE order_id=user_order_id;
+      RETURN total;
+END;
+$$ 
+LANGUAGE plpgsql;
 
-INSERT INTO items (sale_date, price) 
-VALUES ('2023-04-04', '2000'),
-('2022-12-12', '600'),
-('2023-04-07', '1000')
-
-
--- Create a function that returns the total price for a given order.
+SELECT totalPrice(1);
