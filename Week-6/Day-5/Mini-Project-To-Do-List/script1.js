@@ -53,14 +53,14 @@ function addTask(e) {
   }
 
 
-  // const closeBtn = document.getElementById("close");
-  // closeBtn .addEventListener("click", deleteAll);
+  const closeBtn = document.getElementById("close");
+  closeBtn .addEventListener("click", deleteAll);
   
-  // function deleteAll () {
-  //     console.log("test");
-  //     //delete all for localstorage
-  //     localStorage.clear();
-  //     section.textContent = "";
-  //     spantotal.textContent = ` --- No tasks yet ----`;
-  // }
+  function deleteAll () {
+      console.log("test");
+      //delete all for localstorage
+      localStorage.clear();
+      section.textContent = "";
+      spantotal.textContent = ` --- No tasks yet ----`;
+  }
   
