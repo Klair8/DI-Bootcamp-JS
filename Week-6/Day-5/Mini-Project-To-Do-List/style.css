@@ -1,0 +1,97 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+ background-image: url(joseph-barrientos-oQl0eVYd_n8-unsplash.jpg);
+ background-repeat: no-repeat;
+ background-size:  1600px 800px;
+ color:white;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form{
+  width: 400px ;
+  height: auto;
+}
+
+input {
+    border: 2px solid black;
+    width: 100%;
+    padding: 10px;
+    float: right;
+    font-size: 16px;
+    border-radius:10px;
+    margin:10px; 
+  }
+
+label {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+#submit:hover {
+    background-color: rgb(236, 152, 113);
+  }
+
+#submit{
+  width:80%;
+  font-size: 16px;
+  border-radius:10px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+
+/* CSS for script.2 */
+
+#containertwo{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task{
+  display: flex;  
+  background-color: white;
+  color: black;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid black;
+  width: 60%;
+  float: right;
+  font-size: 16px;
+  border-radius:10px;
+  margin:10px; 
+}
+
+.show{
+  size: 16px;
+  width: 20px;
+}
+
+/* .Edit{
+  border: 2px solid black;
+} */
+
+/* .checkB :: before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+} */
+
