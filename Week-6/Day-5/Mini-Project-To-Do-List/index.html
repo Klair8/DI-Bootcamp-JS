@@ -9,7 +9,7 @@
 </head>
 <body>  
     <section>
-        <form id="form" action="render.html" method="GET">
+        <form id="form" target="_blank">
             <h2> My Task List</h2>  
             <br><br>
             <label for="taskInput">NEW TASK </label>
@@ -22,7 +22,7 @@
         <br>
             <label for="end_time">END</label>
             <input type="datetime-local" id="end_time" name="end_time"><br><br>  
-            <input type="submit">
+            <input type="submit" onclick="window.location.href = 'render.html' ">
         </form>   
             <button id="close">ERASE ALL TASKS</button>
     </section>
