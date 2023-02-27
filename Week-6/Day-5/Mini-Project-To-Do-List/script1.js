@@ -22,7 +22,7 @@ function addTask(e) {
     console.log(start_time, end_time)
 
      //to calcule the reminaing day
-    const date1 = new Date(start_time);
+    const date1 = new Date();
     const date2 = new Date(end_time);
     const diffTime = Math.abs(date1 - date2);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
