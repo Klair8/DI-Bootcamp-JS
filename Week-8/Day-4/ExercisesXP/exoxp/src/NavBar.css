@@ -1,0 +1,11 @@
+
+/* change the link color and add padding for height */
+.navbar-custom .navbar-nav .nav-link {
+    color:   #003bee;
+    padding: 1rem 1rem;
+}
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: #003bee; 
+}
