@@ -7,7 +7,7 @@ const MovieList = (props)=>{
     console.log('movielist',props)
     let array = props.List
  return(
-        <div style={{display:'inline-block', width:'50'}}>
+        <div style={{display:'inline-block', width:'50%'}}>
         <h2>Movie List</h2>
         {array.map((item,i)=>(
             <div key={i}>

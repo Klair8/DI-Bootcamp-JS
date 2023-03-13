@@ -8,7 +8,7 @@ const MovieDetails = (props) => {
   //   return <div> No movie selected</div>
   // } else{
   return (
-    <div style={{display:'inline-block', width:'50'}}>
+    <div style={{display:'inline-block', width:'50%'}}>
     <h2>Movie</h2>
       <p>{props.mdetail.title}</p>
       <p>Release date: {props.mdetail.releaseDate}</p>
