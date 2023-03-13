@@ -1,6 +1,10 @@
-export const movieSelected = (movie) =>{
+export const DETAIL = 'DETAIL'  
+
+
+export const showDetail = (movieObj) =>{  
+    // console.Console.log('showdetail', movieObj)
     return{
-        type:'MOVIE_SELECTED',
-        payload: movie
+        type:DETAIL,
+        payload: movieObj
     }
 }
