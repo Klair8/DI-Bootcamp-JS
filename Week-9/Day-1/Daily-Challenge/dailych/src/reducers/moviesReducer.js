@@ -1,4 +1,5 @@
 import{DETAIL} from '../actions '
+import{combineReducers} from 'redux'  // redux not the file
 
 const initialState ={
     movieList: [
@@ -11,7 +12,12 @@ const initialState ={
     detail:{}
 }
 
- export const moviesReducer = (state= initialState,action={}) =>{
+ export const movies_reducer = (state= initialState,action={}) =>{
+            return { ...state}   
+    }    
+   
+
+export const details_reducer = (state= initialState,action={}) =>{
     switch (action.type){
         case DETAIL:
             return {...state, detail:action.payload}
@@ -20,4 +26,11 @@ const initialState ={
     }    
    
 }
+
+export const root_reducer = combineReducers({
+    movies_reducer,
+    details_reducer
+})
+
+// export default root_reducer
 

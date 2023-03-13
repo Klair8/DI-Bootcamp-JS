@@ -22,7 +22,7 @@ const MovieDetails = (props) => {
 const mapStateToProps = (state) => {
     console.log('statemoviedetail',state)
   return {
-    mdetail: state.detail
+    mdetail: state.details_reducer.detail
   }
 }
 

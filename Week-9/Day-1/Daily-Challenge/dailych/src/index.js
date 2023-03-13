@@ -10,8 +10,8 @@ import reportWebVitals from './reportWebVitals';
 // import combine from './reducers/index';
 // const store = createStore(combine);
 
-import {moviesReducer} from './reducers/moviesReducer'
-const store = createStore(moviesReducer);
+import {root_reducer} from './reducers/moviesReducer'
+const store = createStore(root_reducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
