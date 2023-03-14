@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { changeInsert } from '../actions/transactionActions';
 import { changeUpdate } from '../actions/transactionActions';
-import { changeUpdate_Index } from '../actions/transactionActions';
-import { changeDelete } from '../actions/transactionActions';
 
 class Transaction extends React.Component{
     constructor(props){
@@ -17,7 +15,6 @@ class Transaction extends React.Component{
     }
 
   handleChange=(e)=> {
-    e.preventDefault()
     console.log('handlechange',e.target.value)
     const value =  e.target.value
     this.setState({ [e.target.name] : value })
@@ -25,19 +22,40 @@ class Transaction extends React.Component{
   }
    handleSubmit=(e)=> {
     e.preventDefault()
-    this.props.push(this.state)
-    console.log('handlesubmit',this.state) 
+    if(this.props.index === -1){
+      this.props.handleInsert(this.state)
+    }else{
+      this.props.handleUpdate(this.state)
+    }
+    this.setState({
+      accountNumber:"", 
+      FSC:"",
+      name:"",
+      amount:""
+    })
    }
+   componentDidUpdate = (prevProps,prevState)=>{
+    if(prevProps.index != this.props.index && this.props.index != -1){
+    const trx = this.props.list[this.props.index];
+    this.setState({
+      accountNumber:trx.accountNumber|| "", 
+      FSC:trx.FSC || "",
+      name:trx.name || "",
+      amount:trx.amount ||""
+    })
+   }
+  }
 
     render (){
+      console.log(this.props)
         return(
           <div>
             <form action="" onSubmit={this.handleSubmit}>
-            <input type='text' name="accountNumber" placeholder="accountNumber" id="" onChange={this.handleChange}/><br/>
-            <input type='text' name="FSC" placeholder="FSC"  id="" onChange={this.handleChange}/><br/>
-            <input type='text' name="name" placeholder="name" id="" onChange={this.handleChange}/><br/>
-            <input type='text' name="amount" placeholder="amount "id="" onChange={this.handleChange}/><br/>
-            <input type="submit" value="submit"/>
+            <input type='text' value={this.state.accountNumber} name="accountNumber" placeholder="accountNumber" id="" onChange={this.handleChange}/><br/>
+            <input type='text' value={this.state.FSC} name="FSC" placeholder="FSC"  id="" onChange={this.handleChange}/><br/>
+            <input type='text' value={this.state.name} name="name" placeholder="name" id="" onChange={this.handleChange}/><br/>
+            <input type='text' value={this.state.amount} name="amount" placeholder="amount "id="" onChange={this.handleChange}/><br/>
+            <input type="submit" value={this.props.index===-1 ? 'Submit' : 'Update'}/>
             </form>
             </div>
         )
@@ -53,10 +71,8 @@ const mapStateToProps =(state)=>{
 
 const mapDisptachToProps = (dispatch)=>{
   return{
-    push : (e) => dispatch(changeInsert(e)),
-    changeUpdate: () => dispatch(changeUpdate()),
-    update_all :() => dispatch(changeUpdate_Index()),
-    changeDelete:() => dispatch(changeDelete())
+    handleInsert: (data) => dispatch(changeInsert(data)),
+    handleUpdate: (trx) => dispatch(changeUpdate(trx)),
   }
 }
 

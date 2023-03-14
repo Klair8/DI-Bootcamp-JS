@@ -1,27 +1,19 @@
 import TransactionForm from './TransactionForm'
 import { connect } from 'react-redux';
-import { changeUpdate } from '../actions/transactionActions';
+import { changeUpdate_Index } from '../actions/transactionActions';
 import { changeDelete } from '../actions/transactionActions';
 
 const List =(props)=>{
-  console.log('trList', props) // dat arrivign
-
-    // handleEdit=(index)=> {
-    //     // this.setState({list: e.target.value})
-    //   }   
-
-    //  handleDelete=(index)=> {
-    //     this.setState({list: e.target.value})
-    //   }
+  console.log('trList', props) // data arriving
 
     
     if (props.list == null) {
-      return <div>  <TransactionForm/></div>
+      return <div> <TransactionForm /></div>
      } else{
     return( 
        <div>
         <TransactionForm/>
-        <table>
+        <table style={{border:'1px solid white', margin:'0 auto'}}>
         <thead>
           <tr>
           <th>Account</th>
@@ -41,8 +33,8 @@ const List =(props)=>{
              <td>{transaction.name}</td>
                <td>{transaction.amount}</td>
              <td>
-               <button onClick={() => props.changeUpdate(index)}>Edit</button>
-                 <button onClick={() => props.changeDelete(index)}>Delete</button>
+               <button onClick={() => props.handleEdit(index)}>Edit</button>
+                 <button onClick={() => props.handleDelete(index)}>Delete</button>
             </td>
             </tr>
             )}
@@ -67,8 +59,8 @@ const List =(props)=>{
   
   const mapDisptachToProps = dispatch=>{
     return{
-       changeUpdate: () => dispatch(changeUpdate()),
-       changeDelete:() =>dispatch(changeDelete())
+      handleEdit:(index) => dispatch(changeUpdate_Index(index)),
+      handleDelete:(index) => dispatch(changeDelete(index))
     }
   }
   
