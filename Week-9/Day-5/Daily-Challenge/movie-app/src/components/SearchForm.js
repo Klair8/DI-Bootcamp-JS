@@ -35,9 +35,7 @@ render(){
     const filteredMovies = movies.filter(movie =>{
         return movie.Title.toLowerCase().includes(this.state.searchText.toLowerCase())
         })
-        // if(!filteredMovies.length){
-        //   return <h1>Loading</h1>
-        // }else{
+      
     return(
         <div>
             <h1>Search Movies, TV Series...</h1>

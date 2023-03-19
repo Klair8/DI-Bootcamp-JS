@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer =()=>{
   return(
-    <h1>Wrote Something</h1>
+    <h4>By @Claire  Using React JS & Redux JS integrated with external movies data APIOMDB</h4>
   )
 }
 

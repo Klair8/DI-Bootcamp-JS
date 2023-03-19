@@ -1,17 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-const MovieCard = ({ Title,Year,Poster }) => {
+const MovieCard = ({ Title,Year,Poster,id}) => {
+
+  const navigate = useNavigate();
+
+  const handleMovieDetails= (id) => {
+    console.log('Clicked the details button');
+    navigate('/MovieDetails', { state: { id } });
+    console.log('id movie card',id)  // working
+  };
+  
   return(
-    <div style={{border: '2px.solid black'}}>
+    <div className='mcard'>
         <img src={Poster} alt={Title} />
-        <div>
-            <h2>{Title}</h2>
-            <p> {Year}</p>
-            {/* <Link to={`/movies/${movie.imdbID}`} className="btn"> 
-              Details
-            </Link>  */}
-        </div>
+            <h3>{Title}</h3><p>{Year}</p>
+            <button onClick={() => handleMovieDetails(id)} className="btn"> 
+              Details </button>
     </div>
 )
 };
