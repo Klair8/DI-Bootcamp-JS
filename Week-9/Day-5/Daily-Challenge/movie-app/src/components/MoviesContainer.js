@@ -13,8 +13,7 @@ const MoviesContainer =({movies}) =>{
             id={movies[i].imdbID}
             Title={movies[i].Title} 
             Year={movies[i].Year} 
-            Poster={movies[i].Poster}/>
-            
+            Poster={movies[i].Poster}/>  
           )
       })  
       }

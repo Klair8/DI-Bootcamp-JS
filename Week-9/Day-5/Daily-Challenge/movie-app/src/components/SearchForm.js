@@ -43,7 +43,6 @@ render(){
             <input type='text' name="searchText" onChange={this.handleChange} />   
             <button type="submit">Search</button> 
             </form>
-            {/* <MoviesContainer /> */}
             <MoviesContainer movies={filteredMovies}/>
         </div>
     )

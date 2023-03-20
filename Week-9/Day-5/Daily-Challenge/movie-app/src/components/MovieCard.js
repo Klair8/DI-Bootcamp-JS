@@ -8,8 +8,8 @@ const MovieCard = ({ Title,Year,Poster,id}) => {
 
   const handleMovieDetails= (id) => {
     console.log('Clicked the details button');
-    navigate('/MovieDetails', { state: { id } });
-    console.log('id movie card',id)  // working
+    navigate('/MovieDetails/:id', { state: { id } });
+    console.log('id from moviecard',id)  // working
   };
   
   return(

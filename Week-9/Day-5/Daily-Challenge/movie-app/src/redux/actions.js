@@ -6,9 +6,9 @@ export const getFilm = (movie_Obj) =>{
 }
 
 
-export const fetchFilms =(text) => (dispatch, getState) =>{
+export const fetchFilms =(text,id,plot,yearofr) => (dispatch, getState) =>{
     dispatch( { type: "LOADING" } )
-  fetch(`http://www.omdbapi.com/?s=${text}&type=movie&apikey=fbe2eea3`)
+  fetch(`http://www.omdbapi.com/?s=${text}&type=movie&apikey=fbe2eea3&i=${id}&plot=${plot}&y=${yearofr}`)
       .then(res=>res.json())
       .then(data=>{
         dispatch({
