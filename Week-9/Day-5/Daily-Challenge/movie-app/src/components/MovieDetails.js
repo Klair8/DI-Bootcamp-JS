@@ -1,10 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-
+// import { useLocation } from 'react-router-dom';
+import { useSelector} from 'react-redux'
 
 const MovieDetails = () => {
-  const location = useLocation();
-  const id = location.state.id;
+  // const location = useLocation();
+  // const id = location.state.id;
+
+  const movie = useSelector()
 
   return (
     <div>
