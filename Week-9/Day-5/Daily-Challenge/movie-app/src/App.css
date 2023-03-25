@@ -22,3 +22,8 @@
   background-color: #343a40;
 }
 
+.detailsall{
+  display: flex;
+  justify-content: center;
+}
+

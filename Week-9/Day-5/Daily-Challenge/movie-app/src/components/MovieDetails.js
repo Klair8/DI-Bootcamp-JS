@@ -19,26 +19,29 @@ const MovieDetails = () => {
 
 
   return (
-    <div>
-      <h1>Movie Details</h1>
-    
-      <p>ID:{id}</p>
+    <div className='mdetails'>
+      <h1>Movie Details</h1>  
       {movie && (
-        <div className='mdetails'>
-          <p>{movie.Poster}</p>
-        <div className='details'>
+        <div className='detailsall'>
+          <img src={movie.Poster} alt={movie.Title} />
+        <ul className='detailstext'>
           <h2>{movie.Title}</h2>
-          <p>{movie.Genre}</p>
-          <p>{movie.Released}</p>
-          <p>{movie.imdbRating}</p>
-          <p>{movie.Director}</p>
-          <p>{movie.Writers}</p>
-        </div>
-        <div className='plot'>
-          <p>{movie.Plot}</p>
-        </div>
-        </div>
+          <li> <strong> Genre : </strong> {movie.Genre}</li>
+          <li> <strong> Released: </strong>  {movie.Released}</li>
+          <li> <strong> imdbRating: </strong>{movie.imdbRating}</li>
+          <li> <strong> Director: </strong> {movie.Director}</li>
+          <li> <strong> Writers: </strong>{movie.Writer}</li>
+        </ul>
+        </div>      
       )}
+        {movie && (
+        <div className='about'>
+          <h3>About</h3>
+          <p>{movie.Plot}</p>
+          <button href="https://www.imdb.com/title/{movie.imdbID}">View on IMDB</button>
+          <button>Back to the search</button>
+        </div>
+        )}
     </div>
   );
 };
