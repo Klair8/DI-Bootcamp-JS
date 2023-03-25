@@ -18,6 +18,12 @@ export const reducer = (state = initialState, action={}) => {
               movies: action.payload.Search || [],
               loading: false,
             };
+            case "FETCH_MOVIE":
+              return {
+                ...state,
+                movie: action.payload,
+                loading: false,
+              };
           case "LOADING":
             return {
               ...state,
