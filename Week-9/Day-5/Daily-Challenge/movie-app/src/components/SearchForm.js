@@ -1,10 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {getFilm} from '../redux/actions'
+// import {getFilm} from '../redux/actions'
 import { fetchFilms } from '../redux/actions';
-import MovieCard from './MovieCard';
-import MoviesContainer from './MoviesContainer'
+// import MovieCard from './MovieCard';
+import MoviesContainer from './MoviesContainer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
 
 class SearchFilm extends React.Component {
@@ -37,8 +39,8 @@ render(){
         })
       
     return(
-        <div>
-            <h1>Search Movies, TV Series...</h1>
+        <div className='searchForm'>
+            <h1> <FontAwesomeIcon icon={faMagnifyingGlass} /> Search Movies, TV Series... </h1>
             <form onSubmit={this.handleSubmit}>
             <input type='text' name="searchText" onChange={this.handleChange} />   
             <button type="submit">Search</button> 
@@ -49,15 +51,12 @@ render(){
 }
 }
 
-
-
 const mapStateToProps = (state) =>{
      console.log('mapStateToProps',state)  // got the array of the search
     return{
     movies: state.movies
 }
 }
-
 
 const mapDispatchToProps = {
     fetchFilms
