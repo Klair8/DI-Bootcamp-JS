@@ -23,7 +23,6 @@ const MoviesContainer =({movies}) =>{
 
 
 
-
 export default MoviesContainer;
 
 

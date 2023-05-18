@@ -39,14 +39,19 @@ render(){
         })
       
     return(
+        <>
         <div className='searchForm'>
             <h1> <FontAwesomeIcon icon={faMagnifyingGlass} /> Search Movies, TV Series... </h1>
             <form onSubmit={this.handleSubmit}>
-            <input type='text' name="searchText" onChange={this.handleChange} />   
-            <button type="submit">Search</button> 
+            <br></br>
+            <input className='inputSearch'type='text' name="searchText" onChange={this.handleChange} />   
+            <br></br>
+            <br></br>
+            <button className='btnSearch'type="submit"> Search</button> 
             </form>
-            <MoviesContainer movies={filteredMovies}/>
         </div>
+        <MoviesContainer movies={filteredMovies}/>
+        </>
     )
 }
 }

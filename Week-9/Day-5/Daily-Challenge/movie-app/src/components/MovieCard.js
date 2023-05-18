@@ -13,10 +13,13 @@ const MovieCard = ({ Title,Year,Poster,id}) => {
   };
   
   return(
-    <div className='mcard'>
-        <img src={Poster} alt={Title} />
-            <h3>{Title}</h3><p>{Year}</p>
-            <button onClick={() => handleMovieDetails(id)} className="btn"> 
+    <div className='Moviecards'>
+        <div style={{ width: '350px', height: '450px' }}>
+           <img src={Poster} alt={Title} style={{ width: '100%', height: '100%' }} />
+        </div>
+        <br></br>
+        <h4>{Title}</h4><p>{Year}</p>
+        <button className="btnDetails" onClick={() => handleMovieDetails(id)} > 
               Details </button>
     </div>
 )
