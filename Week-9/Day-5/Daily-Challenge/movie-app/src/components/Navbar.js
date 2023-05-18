@@ -14,13 +14,13 @@ function Bar() {
             <img
               alt=""
               src={imdbLogo} 
-              width="50"
-              height="50"
+              width="70"
+              height="70"
             /> {' '}
               </Navbar.Brand>
               <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-          MOVIES APP 
+          MOVIES / SERIES APP 
           </Navbar.Text>
         </Navbar.Collapse>
         </Container>

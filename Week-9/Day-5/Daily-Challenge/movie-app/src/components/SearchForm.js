@@ -44,7 +44,7 @@ render(){
             <h1> <FontAwesomeIcon icon={faMagnifyingGlass} /> Search Movies, TV Series... </h1>
             <form onSubmit={this.handleSubmit}>
             <br></br>
-            <input className='inputSearch'type='text' name="searchText" onChange={this.handleChange} />   
+            <input className='inputSearch'type='text' name="searchText" onChange={this.handleChange} style={{ width: '400px' }}  />   
             <br></br>
             <br></br>
             <button className='btnSearch'type="submit"> Search</button> 
