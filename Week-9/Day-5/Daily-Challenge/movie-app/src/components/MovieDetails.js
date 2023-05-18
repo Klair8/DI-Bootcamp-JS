@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovie } from '../redux/actions';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -19,30 +21,61 @@ const MovieDetails = () => {
 
 
   return (
-    <div className='mdetails'>
-      <h1>Movie Details</h1>  
+    <>
+    <Navbar/>
+    <br></br>
+    <div className='detailsPage'>
       {movie && (
-        <div className='detailsall'>
+        <div className='detailsAll'>
           <img src={movie.Poster} alt={movie.Title} />
-        <ul className='detailstext'>
-          <h2>{movie.Title}</h2>
-          <li> <strong> Genre : </strong> {movie.Genre}</li>
-          <li> <strong> Released: </strong>  {movie.Released}</li>
-          <li> <strong> imdbRating: </strong>{movie.imdbRating}</li>
-          <li> <strong> Director: </strong> {movie.Director}</li>
-          <li> <strong> Writers: </strong>{movie.Writer}</li>
-        </ul>
+          <div className='detailsData'>
+  <h2>{movie.Title}</h2>
+  <br></br>
+  <br></br>
+  <table style={{ border: '1px solid black',padding: '8px', height:'60%', width: '100%' }}>
+    <tbody>
+    <tr >
+        <td><strong>Genre:</strong></td>
+        <td>{movie.Genre}</td>
+      </tr>
+      <tr>
+        <td><strong>Released:</strong></td>
+        <td>{movie.Released}</td>
+      </tr>
+      <tr>
+        <td><strong>imdbRating:</strong></td>
+        <td>{movie.imdbRating}</td>
+      </tr>
+      <tr>
+        <td><strong>Director:</strong></td>
+        <td>{movie.Director}</td>
+      </tr>
+      <tr>
+        <td><strong>Writers:</strong></td>
+        <td>{movie.Writer}</td>
+      </tr>
+      <tr>
+        <td><strong>Actors:</strong></td>
+        <td>{movie.Actors}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
         </div>      
       )}
         {movie && (
-        <div className='about'>
+        <div className='detailsAbout'>
           <h3>About</h3>
           <p>{movie.Plot}</p>
-          <button href="https://www.imdb.com/title/{movie.imdbID}">View on IMDB</button>
-          <button>Back to the search</button>
+          <a className='btnDetails' href={`https://www.imdb.com/title/${movie.imdbID}`}>View on IMDb</a>
+          <Link to="/Landing"  className='btnDetailSearch' style={{ marginLeft: '10px' , color:'white' }}>Go Back to the Search</Link>
         </div>
         )}
     </div>
+    <br></br>
+    <Footer/>
+    </>
   );
 };
 

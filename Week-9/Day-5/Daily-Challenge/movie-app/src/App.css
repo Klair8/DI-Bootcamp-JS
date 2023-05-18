@@ -117,8 +117,32 @@
 }
 
 
-.detailsall{
-  display: flex;
-  justify-content: center;
+.detailsPage{
+  margin: 5% 10% 5% 10%;
+  border: 2px solid black;
+  padding: 2%;
+}
+
+.detailsAll{
+margin:4%;
+display: flex;
+justify-content: center;
+}
+
+.detailsData{
+  margin-left: 6%;
+}
+
+.detailsData tr{
+  border: 1px solid black;
+  padding: 8px ;
+}
+
+.detailsAbout{
+  color: white;
+  background-color: grey;
+  text-align: left;
+  margin: 5%;
+  padding: 2%;
 }
 
