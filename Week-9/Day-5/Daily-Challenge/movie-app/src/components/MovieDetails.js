@@ -69,7 +69,7 @@ const MovieDetails = () => {
           <h3>About</h3>
           <p>{movie.Plot}</p>
           <a className='btnDetails' href={`https://www.imdb.com/title/${movie.imdbID}`}>View on IMDb</a>
-          <Link to="/Landing"  className='btnDetailSearch' style={{ marginLeft: '10px' , color:'white' }}>Go Back to the Search</Link>
+          <Link to="/"  className='btnDetailSearch' style={{ marginLeft: '10px' , color:'white' }}>Go Back to the Search</Link>
         </div>
         )}
     </div>
