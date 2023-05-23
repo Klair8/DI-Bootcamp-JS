@@ -2,7 +2,7 @@ const  {db} = require('../config/db.js');
 
 
 const insertProduct = (item) =>{   // insert item
-    return db('list')
+    return db('list') // name of the table in elephant sql
     .insert(item)
     .returning('*')
   }
